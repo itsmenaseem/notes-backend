@@ -7,8 +7,8 @@ import { authRateLimter } from "../middlewares/rate-limit.middleware.js";
 const router = Router()
 
 
-router.route("/signup").post(authRateLimter,signup);
-router.route("/login").post(authRateLimter,login);
+router.route("/signup").post(signup);
+router.route("/login").post(login);
 router.route("/me").get(authMiddleware,getProfile)
 router.route("/logout").get(logout)
 
