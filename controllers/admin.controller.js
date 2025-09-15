@@ -25,7 +25,7 @@ export const createInvite = asyncHandler(async(req,res,next) => {
         invitedBy:req.user.id,
         url:"abc"
     })
-    const url = `${process.env.FRONT_END_URL}/invite?invitationId=${invitation._id}&companyCode=${req.user.companyCode}&email=${email}`
+    const url = `${process.env.VITE_FRONTEND_URL}/invite?invitationId=${invitation._id}&companyCode=${req.user.companyCode}&email=${email}`
     invitation.url = url
     await invitation.save()
     return res.status(201).json({
